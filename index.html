@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="Maze.js"></script>
+    <script src="HtmlProcess.js"></script>
+    <script src="GeneticAlgo.js"></script>
+    <script src="Animation.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="allElement">
+    <h1>VietNam Super Brain Problem Solver</h1>
+    <label for="inputvalue">Sum Number:</label>
+    <input type="text" id="inputValue" name="inputvalue"  value="531"> <br> <br>
+    <div id="mainMaze"></div>
+    <div id = "generationTab">
+        <a>Generation :</a> <a id="generationCount">1</a>
+    </div>
+    <div class="bottomButton">
+        <button id="runnow" type="button" class="button" onclick="runAl()"><a>RUN</a></button>
+    </div>
+</div>
+<script>
+    function runAl() {
+        document.getElementById("generationCount").innerHTML = "0";
+        document.getElementById("runnow").disabled = true;
+        let inputv = parseInt(document.getElementById("inputValue").value);
+        console.log(inputv);
+        let ani = new Animation(inputv);
+        ani.anime();
+    }
+
+    let htmlProcess = new HtmlProcess(900,400);
+</script>
+</body>
+</html>
